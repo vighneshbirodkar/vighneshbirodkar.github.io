@@ -4,20 +4,94 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+
+  <div align="centre" class="dp">
+    <img  align="middle" src="images/dp.jpg" />
+  </div>
+
+  <div class="designation">
+    <h3 >Graduate Student, NYU
+        <div class="hline" ></div>
+    </h3>
+
+    <p class="objective">
+        I am pursuing my Master's Degree in Computer Science at NYU's
+        Courant Institute.
+        The things which interest me the most are Computer Vision, Robotics,
+        Data-Visualization, Operating Systems and Networking. I believe the key
+        to debugging and maintainability of machine learning algorithms is
+        effective visualization. I like the challenge of writing light-weight
+        code for real-time image processing, as required for robots. I also
+        don't mind getting my hands dirty writing low-level C code for OS or
+        network related tasks.
+    </p>
+  </div>
+
+  <div class="title" >
+    <h1><strong> Projects </strong> <div class="hline" ></div> </h1>
+  </div>
+  <div class="project">
+    <h2> <strong> RAGs for scikit-image </strong>  </h2>
+    <img class="project-img" src="/images/rag_coins.jpg"/>
+    <p>For Google Summer of Code (GSoC) 2014 I implemented Region Adjacency Graphs
+    (RAGs) for <a href="http://scikit-image.org/">scikit-image </a>. On top of
+    the RAG frameowrk I implemented thresholding, hierarchical merging and
+    normalized cut routines for image segmentation.
+    </p>
+
+    <a class="noul" href="https://www.youtube.com/playlist?list=PLKv8dAEiRFBBhv7Yu5vsAYD0KwRpcauGO">
+        <div class="btn-link">Videos</div>
+    </a>
+    <a class="noul" href="https://vcansimplify.wordpress.com/tag/gsoc/">
+        <div class="btn-link">Blog Posts</div>
+    </a>
+
+    <br/><br/><br/><br/>
+  </div>
+
+  <div class="project">
+    <h2> <strong> AC Circuit Simulator </strong>  </h2>
+    <img class="project-img" src="/images/ac.jpg"/>
+    <p>An AC Circuit Solver designed to simulate simple Alternating Current
+        Circuits. It is a part of <a href="http://www.ekshiksha.org.in/">ekShiksha</a>
+            and intended for school students.
+    </p>
+
+    <a class="noul" href="http://www.ekshiksha.org.in/pages/playswf.jsp?id=311&mode=demo">
+        <div class="btn-link">Demo</div>
+    </a>
+
+    <br/><br/><br/><br/><br/>
+  </div>
+
+
+  <div class="title" >
+    <h1><strong> Robots </strong> <div class="hline" ></div> </h1>
+  </div>
+  <div class="project">
+    <h2> <strong> Maze Solving Robot </strong>  </h2>
+    <img class="project-img" src="/images/robot_maze.jpg"/>
+    <p>Our robot won first place at NIT Surathkal, at its technical festical
+        'Engineer' second time in a row in 2012. The robot was guided via
+        bluetooth by a laptop in real-time which monitored its position from an
+        overhead camera. Its task was to finish at the end of a unseen circular
+        maze. The entire system was comletely autonomous.
+    </p>
+
+    <a class="noul" href="https://www.youtube.com/watch?v=KleMLYbjO3E">
+        <div class="btn-link">Video</div>
+    </a>
+    <a class="noul" href="https://vcansimplify.wordpress.com/2013/04/09/solving-mazes-like-a-boss/">
+        <div class="btn-link">Blog Post</div>
+    </a>
+    <br/><br/><br/><br/>
+  </div>
+
+
+  </div>
 
 </div>

@@ -12,6 +12,100 @@
     position: relative;
 }
 
+.btn-link{
+    background-color:$brand-color;
+    float:left;
+    color:#fff;
+    width:150px;
+    height:40px;
+    line-height:40px;
+    margin:5px;
+    font-weight:bold;
+    border-radius:5px;
+    text-align:center;
+
+
+    &:hover{
+        background-color:#1C5441;
+
+    }
+
+
+}
+
+.project-img{
+
+    width:180px;
+    height:180px;
+    float:left;
+
+    margin-right:15px;
+    border-radius:15px;
+    border-width:0px;
+    border-style:solid;
+    border-color:$brand-color
+}
+
+.noul{
+
+    &:hover{
+        text-decoration: none;
+
+    }
+
+}
+
+.title{
+    color:$brand-color;
+    margin-top:20px;
+    text-align:center;
+}
+.project{
+    h2{
+        color:$brand-color;
+    }
+    font-size: 18px;
+
+    margin-bottom:15px;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    border-bottom-color:#ccc;
+
+
+}
+.hline{
+    border-bottom-width: 2px;
+    border-bottom-style:solid;
+    width:400px;
+    border-bottom-color:$brand-color;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.designation{
+    padding-top:10px;
+    text-align:center;
+    font-size: 18px;
+    color:$brand-color;
+}
+
+
+.objective{
+
+    color:#000;
+}
+.dp {
+    border-style: solid;
+    border-color: $brand-color;
+    border-width: 0px;
+    overflow:hidden;
+    border-radius: 25px;
+    margin-left:auto;
+    margin-right:auto;
+    align:middle;
+    width:350px;
+    height:350px;
+}
 .site-title {
     font-size: 26px;
     line-height: 56px;
