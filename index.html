@@ -10,7 +10,7 @@ layout: default
 
 
   <div align="centre" class="dp">
-    <img  align="middle" src="images/dp.jpg" />
+    <img  align="middle" src="{{ "/images/dp.jpg" | prepend: site.baseurl }}" />
   </div>
 
   <div class="designation">
@@ -36,7 +36,7 @@ layout: default
   </div>
   <div class="project" >
     <h2> <strong> FreDo Editor </strong>  </h2>
-    <img class="project-img" src="/images/fredo.png"/>
+    <img class="project-img" src="{{ "/images/fredo.png" | prepend: site.baseurl }}" />
     <p><strong>Fre</strong>quency <strong>Do</strong>main Editor (Fredo Editor)
         is an application which can edit images in their fequency domain. It is
         intended to help study and understand the 2D Fourier Transform and aid
@@ -60,7 +60,7 @@ layout: default
   </div>
   <div class="project" >
     <h2> <strong> RAGs for scikit-image </strong>  </h2>
-    <img class="project-img" src="/images/rag_coins.jpg"/>
+    <img class="project-img" src="{{ "/images/rag_coins.jpg" | prepend: site.baseurl }}" />
     <p>For Google Summer of Code (GSoC) 2014 I implemented Region Adjacency Graphs
     (RAGs) for <a href="http://scikit-image.org/">scikit-image </a>. On top of
     the RAG frameowrk I implemented thresholding, hierarchical merging and
@@ -79,7 +79,7 @@ layout: default
 
   <div class="project">
     <h2> <strong> AC Circuit Simulator </strong>  </h2>
-    <img class="project-img" src="/images/ac.jpg"/>
+    <img class="project-img" src="{{ "/images/ac.jpg" | prepend: site.baseurl }}" />
     <p>An AC Circuit Solver designed to simulate simple Alternating Current
         Circuits. It is a part of <a href="http://www.ekshiksha.org.in/">ekShiksha</a>
             and intended for school students.
@@ -94,7 +94,7 @@ layout: default
 
   <div class="project">
     <h2> <strong> Visual Programming Editor for Arduino </strong>  </h2>
-    <img class="project-img" src="/images/vpe.jpg"/>
+    <img class="project-img" src="{{ "/images/vpe.jpg" | prepend: site.baseurl }}" />
     <p>A visual programming editor for Arduino boards we made during the summer
         internship at IIT Bombay. It allows the user to form his logic using
         blocks and program it directly onto Arduino Uno boards.
@@ -113,7 +113,7 @@ layout: default
   </div>
   <div class="project">
     <h2> <strong> Maze Solving Robot </strong>  </h2>
-    <img class="project-img" src="/images/robot_maze.jpg"/>
+    <img class="project-img" src="{{ "/images/robot_maze.jpg" | prepend: site.baseurl }}" />
     <p>Our robot won 1st place at NIT Surathkal, at its technical festival
         'Engineer' second time in a row in 2012. The robot was guided via
         bluetooth by a laptop in real-time which monitored its position from an
@@ -132,7 +132,7 @@ layout: default
 
   <div class="project">
     <h2> <strong> Omni-wheeled Robot </strong>  </h2>
-    <img class="project-img" src="/images/robot_omni.jpg"/>
+    <img class="project-img" src="{{ "/images/robot_omni.jpg" | prepend: site.baseurl }}" />
     <p>This robot participated at NITK for 'Engineer' in 2011 an won the 1st
         place. It had a unique omni wheeled design and was guided by a PC
         which observed it through an overhead camera, directing it through a
@@ -154,7 +154,7 @@ layout: default
   </div>
   <div id="bbox">
 
-      <a class="noul" href="/docs/resume.pdf">
+      <a class="noul" href="{{ "/docs/resume.pdf" | prepend: site.baseurl }}">
           <div class="btn-link">Resume</div>
       </a>
 

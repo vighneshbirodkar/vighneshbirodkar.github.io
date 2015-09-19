@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: 'ubuntu';
-  src: url('/fonts/ubuntu_r.ttf');
+  src: url('{{ "/fonts/ubuntu_r.ttf" | prepend: site.baseurl }}');
 }
 
 // Our variables
