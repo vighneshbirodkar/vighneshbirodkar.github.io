@@ -5,31 +5,58 @@ layout: default
 <div class="home">
 
 
-
-
-
-
   <div align="centre" class="dp">
     <img  align="middle" src="{{ "/images/dp.jpg" | prepend: site.baseurl }}" />
   </div>
 
   <div class="designation">
-    <h3 >Graduate Student, NYU
+    <h3 >Research Scientist, FeatureX
         <div class="hline" ></div>
     </h3>
 
     <p class="objective">
-        I am pursuing my Master's Degree in Computer Science at NYU's
-        Courant Institute.
-        The things which interest me the most are Computer Vision, Robotics,
-        Data-Visualization, Operating Systems and Networking. I believe the key
-        to debugging and maintainability of machine learning algorithms is
-        effective visualization. I like the challenge of writing light-weight
-        code for real-time image processing, as required for robots. I also
-        don't mind getting my hands dirty writing low-level C code for OS or
-        network related tasks.
+      I am currently working as a Research Scientist at <a href="http://www.featurex.ai/" >FeatureX</a>.
+      I obtained my Master's Degree in Computer Science from NYU. I am interested in solving computer
+      vision problems using deep neural netowrks. I am intrigued by how vision tasks which take a lot of
+      time and effort to implement on computers are trivially solved by the human brain.
     </p>
   </div>
+
+  <div class="title" id="research" >
+    <h1><strong> Research </strong> <div class="hline" ></div> </h1>
+  </div>
+
+  <div class="project" >
+    <h2> <strong> Unsupervised Learning of Disentangled Representations from Video  </strong>  </h2>
+    <p>
+      We learn disentangled image representations from videos which factorize into stationary
+      and time-varying components. We show how our unsupervised training helps get better
+      video frame predictions several hundred time steps into the future.
+    </p>
+    <a class="noul" href="https://sites.google.com/view/drnet-paper/">
+        <div class="btn-link">Webpage</div>
+    </a>
+    <a class="noul" href="https://arxiv.org/abs/1705.10915">
+        <div class="btn-link">Paper</div>
+    </a>
+  </div>
+
+  <div class="project" >
+    <h2> <strong> A Convolutional approach to Reflection Symmetry </strong>  </h2>
+    <p>
+      An approach to find axes of reflection symmetry in images using complex-valued
+      wavelet convolutions. Our method out-performed the state of the art for single
+      symmetry axis detection. We also present a more comprehensive reflection
+      symmetry dataset.
+    </p>
+    <a class="noul" href="http://symmetry.cs.nyu.edu/">
+        <div class="btn-link">Webpage</div>
+    </a>
+    <a class="noul" href="https://arxiv.org/abs/1609.05257">
+        <div class="btn-link">Paper</div>
+    </a>
+  </div>
+
 
   <div class="title" id="softwares" >
     <h1><strong> Softwares </strong> <div class="hline" ></div> </h1>
@@ -51,8 +78,6 @@ layout: default
     <a class="noul" href="https://github.com/fredo-editor/FreDo">
         <div class="btn-link">Source</div>
     </a>
-
-
   </div>
 
   <div class="title" id="projects" >
