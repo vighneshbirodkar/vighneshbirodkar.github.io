@@ -292,11 +292,12 @@
                 <h1>Vighnesh Birodkar</h1>
                 <p class="bio">
                     I am a machine learning researcher in the space of video
-                    generative models. I am interested in compression, real-time,
-                    and long context generation. I currently work in the video
-                    pre-training team at Luma AI. For my previous work
+                    generative models. I am interested in compression,
+                    real-time, and long context generation. I currently work in
+                    the video pre-training team at Luma AI. For my previous work
                     experience, see my <a href="./docs/resume.pdf"> Resume</a>.
                 </p>
+
                 <div class="social-links">
                     <a
                         href="mailto:vighneshbirodkar@gmail.com"
@@ -328,51 +329,169 @@
                     </a>
                 </div>
             </div>
-
             <div class="section">
-                <h2 class="section-title">Open source</h2>
-                <ul>
-                    <li>
-                        <a
-                            href="https://github.com/tensorflow/models/tree/master/research/object_detection/meta_architectures"
-                            >Anchor free object detectors</a
-                        >
-                        in TF Object Detection API.
-                    </li>
-                    <li>
-                        scikit-learn
-                        <a
-                            href="https://contrib.scikit-learn.org/project-template/"
-                            >project-template</a
-                        >
-                        and
-                        <a
-                            href="https://github.com/scikit-learn/scikit-learn/blob/a3a3b5ad15c7566746288ed32d9875cd8542db95/sklearn/cluster/_k_means_elkan.pyx"
-                            >Elkan's k-means algorithm</a
-                        >.
-                    </li>
+                <h2 class="section-title">Selected Research</h2>
+                    <div class="project">
+                        <div class="project-title">
+                            Sample what you can't compress
+                        </div>
+                        <p class="project-description">
+                            We train auto encoders with diffusion loss (without
+                            GANs) and show that we can achieve both better
+                            compression and higher quality generation.
+                        </p>
+                        <div class="project-links">
+                            <a
+                                href="https://arxiv.org/abs/2409.02529"
+                                target="_blank"
+                            >
+                                <i class="fas fa-file-alt"></i>
+                                arXiv
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="project-title">Gemini 2.5 and Veo</div>
+                        <p class="project-description">
+                            Google's flagship AI model. I added video data and
+                            metrics to the Gemini codebase and trained a prototype
+                            diffusion transformer that, when scaled up, became Veo 1.
+                        </p>
+                        <div class="project-links">
+                            <a
+                                href="https://arxiv.org/abs/2409.02529"
+                                target="_blank"
+                            >
+                                <i class="fas fa-file-alt"></i>
+                                Gemini technical report
+                            </a>
+                            <a
+                                href="https://deepmind.google/models/veo/"
+                                target="_blank"
+                            >
+                                <i class="fa-solid fa-video"></i>
+                                Veo
+                            </a>
+                        </div>
+                    </div>
 
-                    <li>
-                        <a
-                            href="https://scikit-image.org/docs/0.25.x/auto_examples/segmentation/plot_rag.html"
-                            >Region Adjacency Graphs</a
-                        >
-                        and
-                        <a
-                            href="https://scikit-image.org/docs/0.25.x/auto_examples/features_detection/plot_blob.html"
-                            >blob-detection</a
-                        >
-                        in scikit-image.
-                    </li>
-                    <li>
-                        <a href="https://fredo-editor.github.io">FreDo Editor</a
-                        >, a frequency domain image editor.
-                    </li>
-                </ul>
-            </div>
+                    <div class="project">
+                        <div class="project-title">
+                            Videopoet: A large language model for zero-shot video
+                            generation
+                        </div>
+                        <p class="project-description">
+                            We train an LLM with discrete video tokens and show
+                            that it is a powerful framework for video generation.
+                        </p>
+                        <div class="project-links">
+                            <a
+                                href="https://arxiv.org/abs/2312.14125"
+                                target="_blank"
+                            >
+                                <i class="fas fa-file-alt"></i>
+                                arXiv
+                            </a>
+                            <a
+                                href="https://sites.research.google/videopoet/"
+                                target="_blank"
+                            >
+                                <i class="fa-solid fa-globe"></i>
+                                Website
+                            </a>
+                        </div>
+                    </div>
 
-            <div class="section">
-                <h2 class="section-title">Undergraduate projects</h2>
+                    <div class="project">
+                        <div class="project-title">
+                            The surprising impact of mask-head architecture on novel class segmentation
+                        </div>
+                        <p class="project-description">
+                            By fixing a critical flaw in Region Proposal networks, we show
+                            that we can get strong mask generationzation across classes by
+                            using a simple and deep mask head.
+                        </p>
+                        <div class="project-links">
+                            <a
+                                href="https://arxiv.org/abs/2104.00613"
+                                target="_blank"
+                            >
+                                <i class="fas fa-file-alt"></i>
+                                arXiv
+                            </a>
+                            <a
+                                href="https://google.github.io/deepmac/"
+                                target="_blank"
+                            >
+                                <i class="fa-solid fa-globe"></i>
+                                Website
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="project">
+                        <div class="project-title">
+                            Semantic redundancies in image-classification datasets: The 10% you don't need
+
+                        </div>
+                        <p class="project-description">
+                            We show that you can throw away 10% of Imagenet without any loss in evaluation accuracy.
+                        </p>
+                        <div class="project-links">
+                            <a
+                                href="https://arxiv.org/abs/1901.11409"
+                                target="_blank"
+                            >
+                                <i class="fas fa-file-alt"></i>
+                                arXiv
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        <div class="section">
+            <h2 class="section-title">Open source</h2>
+            <ul>
+                <li>
+                    <a
+                        href="https://github.com/tensorflow/models/tree/master/research/object_detection/meta_architectures"
+                        >Anchor free object detectors</a
+                    >
+                    in TF Object Detection API.
+                </li>
+                <li>
+                    scikit-learn
+                    <a href="https://contrib.scikit-learn.org/project-template/"
+                        >project-template</a
+                    >
+                    and
+                    <a
+                        href="https://github.com/scikit-learn/scikit-learn/blob/a3a3b5ad15c7566746288ed32d9875cd8542db95/sklearn/cluster/_k_means_elkan.pyx"
+                        >Elkan's k-means algorithm</a
+                    >.
+                </li>
+
+                <li>
+                    <a
+                        href="https://scikit-image.org/docs/0.25.x/auto_examples/segmentation/plot_rag.html"
+                        >Region Adjacency Graphs</a
+                    >
+                    and
+                    <a
+                        href="https://scikit-image.org/docs/0.25.x/auto_examples/features_detection/plot_blob.html"
+                        >blob-detection</a
+                    >
+                    in scikit-image.
+                </li>
+                <li>
+                    <a href="https://fredo-editor.github.io">FreDo Editor</a>, a
+                    frequency domain image editor.
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Undergraduate projects</h2>
             <ul>
                 <li>
                     <a href="https://github.com/idliitb/VPEDesktop"
@@ -388,8 +507,24 @@
                     for the Indian government's ek-Shiksha programme.
                 </li>
 
-                <li> A <a href="https://vcansimplify.wordpress.com/2013/04/09/solving-mazes-like-a-boss/"> maze-solving robot</a> for NIT Surathkal Automaton 2012.</li>
-                <li> An <a href="https://vcansimplify.wordpress.com/2013/12/27/the-3-wheeled-wonder/"> omnidirectional robot</a> for NIT Surathkal Automaton 2011.</li>
+                <li>
+                    A
+                    <a
+                        href="https://vcansimplify.wordpress.com/2013/04/09/solving-mazes-like-a-boss/"
+                    >
+                        maze-solving robot</a
+                    >
+                    for NIT Surathkal Automaton 2012.
+                </li>
+                <li>
+                    An
+                    <a
+                        href="https://vcansimplify.wordpress.com/2013/12/27/the-3-wheeled-wonder/"
+                    >
+                        omnidirectional robot</a
+                    >
+                    for NIT Surathkal Automaton 2011.
+                </li>
             </ul>
             <footer>© 2025 Vighnesh Birodkar.</footer>
         </div>
