@@ -1,250 +1,532 @@
----
-layout: default
----
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vighnesh Birodkar</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-<div class="home">
+            /*a:hover {
+                color: #f0f0f0;
+            }
+            a:link,
+            a:visited a:focus,
+            a:active {
+                color: inherit;
+            }*/
+            :root[data-theme="light"] {
+                --bg: #fafafa;
+                --text: #2c2c2c;
+                --text-secondary: #666;
+                --border: #e0e0e0;
+                --hover: #f0f0f0;
+            }
 
+            :root[data-theme="dark"] {
+                --bg: #1a1a1a;
+                --text: #e8e8e8;
+                --text-secondary: #a0a0a0;
+                --border: #333;
+                --hover: #242424;
+            }
 
-  <div align="centre" class="dp">
-    <img  align="middle" src="{{ "/images/dp.png" | prepend: site.baseurl }}" />
-  </div>
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --bg: #1a1a1a;
+                    --text: #e8e8e8;
+                    --text-secondary: #a0a0a0;
+                    --border: #333;
+                    --hover: #242424;
+                }
+            }
 
-  <div class="designation">
-    <h3 >Research Engineer, Google
-        <div class="hline" ></div>
-    </h3>
+            @media (prefers-color-scheme: light) {
+                :root {
+                    --bg: #fafafa;
+                    --text: #2c2c2c;
+                    --text-secondary: #666;
+                    --border: #e0e0e0;
+                    --hover: #f0f0f0;
+                }
+            }
 
-    <p class="objective">
-      I am a Research Engineer at <a href="https://ai.google/" >Google</a> working with the 
-      <a href="https://github.com/tensorflow/models/tree/master/research/object_detection" >Object Detection </a> team.
-      I obtained my Master's Degree in Computer Science from NYU. I am interested in solving computer
-      vision problems using deep neural networks. I am intrigued by how vision tasks which take a lot of
-      time and effort to implement on computers are trivially solved by the human brain.
-    </p>
-  </div>
+            body {
+                font-family:
+                    "SF Mono", "Monaco", "Inconsolata", "Fira Code",
+                    "Dank Mono", "Consolas", monospace;
+                background: var(--bg);
+                color: var(--text);
+                line-height: 1.6;
+                transition:
+                    background 0.3s ease,
+                    color 0.3s ease;
+            }
 
-  <div class="title" id="research" >
-    <h1><strong> Research </strong> <div class="hline" ></div> </h1>
-  </div>
-  
-  <div class="project" >
-    <h2> <strong> The surprising impact of mask-head architecture on novel class segmentation </strong>  </h2>
-    <p>
-      We uncover the surprising importance of mask-head architectures when training on partially supervised
-      instance segmentation data. Using these insights we achieve state-of-the-art performance on the
-      COCO partially supervised instance segmentation task.
-    </p>
-    <a class="noul" href="https://arxiv.org/abs/2104.00613">
-        <div class="btn-link">Paper</div>
-    </a>
-    <a class="noul" href="https://google.github.io/deepmac/">
-        <div class="btn-link">Webpage</div>
-    </a>
-    <a class="noul" href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/deepmac.md">
-        <div class="btn-link">Code</div>
-    </a>
-  </div>
-  <div class="project" >
-    <h2> <strong> Semantic Redundancies in Image-Classification Datasets: The 10% You Don't Need
-  </strong>  </h2>
-    <p>
-      Using simple clustering schemes in the latent space, we show that at least 10% of 
-      CIFAR-10 and ImageNet training data can be discarded without any negative impact
-      on generalization.
-    </p>
-    <a class="noul" href="https://arxiv.org/abs/1901.11409">
-        <div class="btn-link">Paper</div>
-    </a>
-  </div>
-  
-  <div class="project" >
-    <h2> <strong> Unsupervised Learning of Disentangled Representations from Video  </strong>  </h2>
-    <p>
-      We learn disentangled image representations from videos which factorize into stationary
-      and time-varying components. We show how our unsupervised training helps get better
-      video frame predictions several hundred time steps into the future.
-    </p>
-    <a class="noul" href="https://sites.google.com/view/drnet-paper/">
-        <div class="btn-link">Webpage</div>
-    </a>
-    <a class="noul" href="https://arxiv.org/abs/1705.10915">
-        <div class="btn-link">Paper</div>
-    </a>
-  </div>
+            .theme-toggle {
+                position: fixed;
+                top: 2rem;
+                right: 2rem;
+                background: none;
+                border: 1px solid var(--border);
+                color: var(--text);
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+                z-index: 100;
+            }
 
-  <div class="project" >
-    <h2> <strong> A Convolutional approach to Reflection Symmetry </strong>  </h2>
-    <p>
-      An approach to find axes of reflection symmetry in images using complex-valued
-      wavelet convolutions. Our method out-performed the state of the art for single
-      symmetry axis detection. We also present a more comprehensive reflection
-      symmetry dataset.
-    </p>
-    <a class="noul" href="http://symmetry.cs.nyu.edu/">
-        <div class="btn-link">Webpage</div>
-    </a>
-    <a class="noul" href="https://arxiv.org/abs/1609.05257">
-        <div class="btn-link">Paper</div>
-    </a>
-  </div>
+            .theme-toggle:hover {
+                background: var(--hover);
+                transform: rotate(180deg);
+            }
 
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 4rem 2rem;
+            }
 
-  <div class="title" id="softwares" >
-    <h1><strong> Softwares </strong> <div class="hline" ></div> </h1>
-  </div>
-  <div class="project" >
-    <h2> <strong> FreDo Editor </strong>  </h2>
-    <img class="project-img" src="{{ "/images/fredo.png" | prepend: site.baseurl }}" />
-    <p><strong>Fre</strong>quency <strong>Do</strong>main Editor (Fredo Editor)
-        is an application which can edit images in their fequency domain. It is
-        intended to help study and understand the 2D Fourier Transform and aid
-        in filter design, mainly for academic/research purposes. It is extremely effective
-        in removing periodic/coherent noise from images. As of yet it is under
-        development and might be unstable.
-    </p>
+            .profile {
+                text-align: center;
+                margin-bottom: 4rem;
+            }
 
-    <a class="noul" href="http://fredo-editor.github.io/">
-        <div class="btn-link">Website</div>
-    </a>
-    <a class="noul" href="https://github.com/fredo-editor/FreDo">
-        <div class="btn-link">Source</div>
-    </a>
-  </div>
+            .profile-image {
+                width: 180px;
+                height: 180px;
+                border-radius: 50%;
+                background: var(--border);
+                margin: 0 auto 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 4rem;
+                color: var(--text-secondary);
+                border: 2px solid var(--border);
+            }
 
-  <div class="title" id="projects" >
-    <h1><strong> Projects </strong> <div class="hline" ></div> </h1>
-  </div>
-  <div class="project" >
-    <h2> <strong> RAGs for scikit-image </strong>  </h2>
-    <img class="project-img" src="{{ "/images/rag_coins.jpg" | prepend: site.baseurl }}" />
-    <p>For Google Summer of Code (GSoC) 2014 I implemented Region Adjacency Graphs
-    (RAGs) for <a href="http://scikit-image.org/">scikit-image </a>. On top of
-    the RAG frameowrk I implemented thresholding, hierarchical merging and
-    normalized cut routines for image segmentation.
-    </p>
+            h1 {
+                font-size: 2rem;
+                font-weight: 500;
+                margin-bottom: 0.5rem;
+                letter-spacing: -0.02em;
+            }
 
-    <a class="noul" href="https://www.youtube.com/playlist?list=PLKv8dAEiRFBBhv7Yu5vsAYD0KwRpcauGO">
-        <div class="btn-link">Videos</div>
-    </a>
-    <a class="noul" href="https://vcansimplify.wordpress.com/tag/gsoc/">
-        <div class="btn-link">Blog Posts</div>
-    </a>
+            .bio {
+                color: var(--text-secondary);
+                font-size: 0.95rem;
+                max-width: 600px;
+                margin: 1rem auto 2rem;
+            }
 
+            .social-links {
+                display: flex;
+                gap: 1.5rem;
+                justify-content: center;
+                align-items: center;
+            }
 
-  </div>
+            .social-links a {
+                color: var(--text);
+                font-size: 1.5rem;
+                transition: all 0.2s ease;
+                opacity: 0.7;
+            }
 
-  <div class="project">
-    <h2> <strong> AC Circuit Simulator </strong>  </h2>
-    <img class="project-img" src="{{ "/images/ac.jpg" | prepend: site.baseurl }}" />
-    <p>An AC Circuit Solver designed to simulate simple Alternating Current
-        Circuits. It is a part of <a href="http://www.ekshiksha.org.in/">ekShiksha</a>
-            and intended for school students.
-    </p>
+            .social-links a:hover {
+                opacity: 1;
+                transform: translateY(-2px);
+            }
 
-    <a class="noul" href="http://www.ekshiksha.org.in/pages/playswf.jsp?id=311&mode=demo">
-        <div class="btn-link">Demo</div>
-    </a>
+            .section {
+                margin-bottom: 3rem;
+            }
 
+            .section-title {
+                font-size: 1.2rem;
+                font-weight: 500;
+                margin-bottom: 1.5rem;
+                padding-bottom: 0.5rem;
+                border-bottom: 1px solid var(--border);
+            }
 
-  </div>
+            .project {
+                padding: 1.5rem 0;
+                border-bottom: 1px solid var(--border);
+            }
 
-  <div class="project">
-    <h2> <strong> Visual Programming Editor for Arduino </strong>  </h2>
-    <img class="project-img" src="{{ "/images/vpe.jpg" | prepend: site.baseurl }}" />
-    <p>A visual programming editor for Arduino boards we made during the summer
-        internship at IIT Bombay. It allows the user to form his logic using
-        blocks and program it directly onto Arduino Uno boards.
-    </p>
+            .project:last-child {
+                border-bottom: none;
+            }
 
-    <a class="noul" href="https://github.com/idliitb/VPEDesktop">
-        <div class="btn-link">Source</div>
-    </a>
-  </div>
+            .project-title {
+                font-size: 1.1rem;
+                font-weight: 500;
+                margin-bottom: 0.5rem;
+            }
 
+            .project-description {
+                color: var(--text-secondary);
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+                line-height: 1.7;
+            }
 
-  <div class="title" id="robots">
-    <h1><strong> Fun with Robots </strong> <div class="hline" ></div> </h1>
-  </div>
-  <div class="project">
-    <h2> <strong> Maze Solving Robot </strong>  </h2>
-    <img class="project-img" src="{{ "/images/robot_maze.jpg" | prepend: site.baseurl }}" />
-    <p>Our robot won 1st place at NIT Surathkal, at its technical festival
-        'Engineer' second time in a row in 2012. The robot was guided via
-        bluetooth by a laptop in real-time which monitored its position from Ana
-        overhead camera. Its task was to finish at the end of a unseen circular
-        maze. The entire system was comletely autonomous.
-    </p>
+            .project-links {
+                display: flex;
+                gap: 1.5rem;
+                font-size: 0.85rem;
+            }
 
-    <a class="noul" href="https://www.youtube.com/watch?v=KleMLYbjO3E">
-        <div class="btn-link">Video</div>
-    </a>
-    <a class="noul" href="https://vcansimplify.wordpress.com/2013/04/09/solving-mazes-like-a-boss/">
-        <div class="btn-link">Blog Post</div>
-    </a>
+            .project-links a {
+                color: var(--text);
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+                padding: 0.4rem 0.8rem;
+                border: 1px solid var(--border);
+                border-radius: 4px;
+                transition: all 0.2s ease;
+            }
 
-  </div>
+            .project-links a:hover {
+                background: var(--hover);
+                transform: translateY(-1px);
+            }
 
-  <div class="project">
-    <h2> <strong> Omni-wheeled Robot </strong>  </h2>
-    <img class="project-img" src="{{ "/images/robot_omni.jpg" | prepend: site.baseurl }}" />
-    <p>This robot participated at NITK for 'Engineer' in 2011 and won the 1st
-        place. It had a unique omni wheeled design and was guided by a PC
-        which observed it through an overhead camera, directing it through a
-        hexagonal grid.
-    </p>
+            a {
+                color: var(--text-secondary);
+                text-decoration: none;
+                border-bottom: 1px solid var(--text-secondary);
+                transition: border-color 0.2s ease;
+            }
 
-    <a class="noul" href="https://www.youtube.com/watch?v=Vn9TXjK-Ip4">
-        <div class="btn-link">Video</div>
-    </a>
-    <a class="noul" href="https://vcansimplify.wordpress.com/2013/12/27/the-3-wheeled-wonder/">
-        <div class="btn-link">Blog Post</div>
-    </a>
+            a:hover {
+                color: var(--text);
+                border-bottom-color: var(--text);
+            }
+            footer {
+                text-align: center;
+                padding: 2rem 0;
+                color: var(--text-secondary);
+                font-size: 0.85rem;
+            }
 
-  </div>
+            p {
+                color: var(--text-secondary);
+            }
+            li {
+                color: var(--text-secondary);
+            }
 
+            @media (max-width: 640px) {
+                .container {
+                    padding: 3rem 1.5rem;
+                }
 
-  <div class="title" id="contact">
-    <h1><strong> Contact </strong> <div class="hline" ></div> </h1>
-  </div>
-  <div id="bbox">
+                .theme-toggle {
+                    top: 1rem;
+                    right: 1rem;
+                }
 
-      <a class="noul" href="{{ "/docs/resume.pdf" | prepend: site.baseurl }}">
-          <div class="btn-link">Resume</div>
-      </a>
+                h1 {
+                    font-size: 1.5rem;
+                }
 
-      <a class="noul" href="https://vcansimplify.wordpress.com/">
-          <div class="btn-link">Blog</div>
-      </a>
-  </div>
+                .profile-image {
+                    width: 140px;
+                    height: 140px;
+                    font-size: 3rem;
+                }
 
-  <div id="social-box">
+                .social-links {
+                    gap: 1rem;
+                }
 
-      <a class="noul" href="https://github.com/vighneshbirodkar">
-          <div class="round-button github">
-              <i class="fa fa-github fa"></i>
-          </div>
-      </a>
+                .social-links a {
+                    font-size: 1.3rem;
+                }
 
-      <a class="noul" href="https://in.linkedin.com/pub/vighnesh-birodkar/8/781/71b ">
-          <div class="round-button linkedin">
-              <i class="fa fa-linkedin fa"></i>
-          </div>
-      </a>
+                .project-links {
+                    flex-direction: column;
+                    gap: 0.75rem;
+                }
 
-      <a class="noul" href="https://www.facebook.com/vighnesh.birodkar">
-          <div class="round-button facebook">
-              <i class="fa fa-facebook fa"></i>
-          </div>
-      </a>
+                .project-links a {
+                    justify-content: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i class="fas fa-circle-half-stroke"></i>
+        </button>
 
-      <a class="noul" href="mailto:vighneshbirodkar@nyu.edu">
-          <div class="round-button mail">
-              <i class="fa fa-envelope-o fa"></i>
-          </div>
-      </a>
+        <div class="container">
+            <div class="profile">
+                <img src="images/dp.jpeg" style="width: 35%" />
+                <br />
+                <p style="font-size: 8pt">
+                    My wife (left) and me (right) at Mendocino arch.
+                </p>
+                <!--<div class="profile-image">
+                    <i class="fas fa-user"></i>
+                </div>-->
+                <h1>Vighnesh Birodkar</h1>
+                <p class="bio">
+                    I am a machine learning researcher in the space of video
+                    generative models. I am interested in compression, real-time
+                    and long context generation. I currently work in the video
+                    pre-training team at Luma AI. For my previous work
+                    experience, see my <a href="./docs/resume.pdf"> Resume</a>.
+                </p>
+                <div class="social-links">
+                    <a
+                        href="mailto:vighneshbirodkar@gmail.com"
+                        aria-label="Email"
+                    >
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a
+                        href="https://github.com/vighneshbirodkar"
+                        target="_blank"
+                        aria-label="GitHub"
+                    >
+                        <i class="fab fa-github"></i>
+                    </a>
 
-  </div>
+                    <a
+                        href="https://scholar.google.com/citations?user=whm4LjQAAAAJ&hl=en"
+                        target="_blank"
+                        aria-label="Google Scholar"
+                    >
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                    <a
+                        href="https://linkedin.com/in/vighneshbirodkar"
+                        target="_blank"
+                        aria-label="LinkedIn"
+                    >
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
 
-  </div>
+            <div class="section">
+                <h2 class="section-title">Open source</h2>
+                <ul>
+                    <li>
+                        <a
+                            href="https://github.com/tensorflow/models/tree/master/research/object_detection/meta_architectures"
+                            >Anchor free object detectors</a
+                        >
+                        in TF Object Detection API.
+                    </li>
+                    <li>
+                        scikit-learn
+                        <a
+                            href="https://contrib.scikit-learn.org/project-template/"
+                            >project-template</a
+                        >
+                        and
+                        <a
+                            href="https://github.com/scikit-learn/scikit-learn/blob/a3a3b5ad15c7566746288ed32d9875cd8542db95/sklearn/cluster/_k_means_elkan.pyx"
+                            >elkans k-means</a
+                        >.
+                    </li>
 
-</div>
+                    <li>
+                        <a
+                            href="https://scikit-image.org/docs/0.25.x/auto_examples/segmentation/plot_rag.html"
+                            >Region Adjacency Graphs</a
+                        >
+                        and
+                        <a
+                            href="https://scikit-image.org/docs/0.25.x/auto_examples/features_detection/plot_blob.html"
+                            >blob-detection</a
+                        >
+                        in scikit-image.
+                    </li>
+                    <li>
+                        <a href="https://fredo-editor.github.io">FreDo Editor</a
+                        >, a frequency domain image editor.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Undergraduate projects</h2>
+            </div>
+            <ul>
+                <li>
+                    <a
+                        href="http://www.ekshiksha.org.in/pages/playswf.jsp?id=311&mode=demo"
+                        >AC Circuit Simulator</a
+                    >
+                    for Indian government's ek-Shiksha programme.
+                </li>
+                <li>
+                    <a href="https://github.com/idliitb/VPEDesktop"
+                        >Visual Programming Editor</a
+                    >
+                    for Arduino baords.
+                </li>
+            </ul>
+
+            <div class="section">
+                <h2 class="section-title">Research</h2>
+
+                <div class="project">
+                    <div class="project-title">
+                        Sample what you can't compress
+                    </div>
+                    <p class="project-description">
+                        We train auto encoders with diffusion loss (without
+                        GANs) and show that we can achieve both, better
+                        compression and higher quality generation.
+                    </p>
+                    <div class="project-links">
+                        <a
+                            href="https://arxiv.org/abs/2409.02529"
+                            target="_blank"
+                        >
+                            <i class="fas fa-file-alt"></i>
+                            arXiv
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">Gemini 2.5 and Veo</div>
+                    <p class="project-description">
+                        Google's flagship AI model. I added video data and
+                        metrics to the Gemini codebase and trained a prototype
+                        DiT that when scaled up became Veo 1.
+                    </p>
+                    <div class="project-links">
+                        <a
+                            href="https://arxiv.org/abs/2409.02529"
+                            target="_blank"
+                        >
+                            <i class="fas fa-file-alt"></i>
+                            Gemini technical report
+                        </a>
+                        <a
+                            href="https://deepmind.google/models/veo/"
+                            target="_blank"
+                        >
+                            <i class="fa-solid fa-video"></i>
+                            Veo
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">
+                        Videopoet: A large language model for zero-shot video
+                        generation
+                    </div>
+                    <p class="project-description">
+                        We trained an LLM with discrete video tokens and show
+                        that it is a powerful framework for video generation.
+                    </p>
+                    <div class="project-links">
+                        <a
+                            href="https://arxiv.org/abs/2312.14125"
+                            target="_blank"
+                        >
+                            <i class="fas fa-file-alt"></i>
+                            arXiv
+                        </a>
+                        <a
+                            href="https://sites.research.google/videopoet/"
+                            target="_blank"
+                        >
+                            <i class="fa-solid fa-globe"></i>
+                            Website
+                        </a>
+                    </div>
+
+                    <div class="project-links">
+                        <a
+                            href="https://arxiv.org/abs/2312.14125"
+                            target="_blank"
+                        >
+                            <i class="fas fa-file-alt"></i>
+                            arXiv
+                        </a>
+                        <a
+                            href="https://sites.research.google/videopoet/"
+                            target="_blank"
+                        >
+                            <i class="fa-solid fa-globe"></i>
+                            Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <footer>© 2025 Vighnesh Birodkar</footer>
+        </div>
+
+        <script>
+            const themeToggle = document.getElementById("themeToggle");
+            const root = document.documentElement;
+
+            let currentTheme = "system";
+            const themes = ["light", "dark", "system"];
+            const icons = {
+                light: "fa-sun",
+                dark: "fa-moon",
+                system: "fa-circle-half-stroke",
+            };
+
+            function setTheme(theme) {
+                currentTheme = theme;
+
+                if (theme === "system") {
+                    root.removeAttribute("data-theme");
+                } else {
+                    root.setAttribute("data-theme", theme);
+                }
+
+                const icon = themeToggle.querySelector("i");
+                icon.className = `fas ${icons[theme]}`;
+
+                try {
+                    localStorage.setItem("theme", theme);
+                } catch (e) {}
+            }
+
+            themeToggle.addEventListener("click", () => {
+                const currentIndex = themes.indexOf(currentTheme);
+                const nextTheme = themes[(currentIndex + 1) % themes.length];
+                setTheme(nextTheme);
+            });
+
+            let savedTheme = "system";
+            try {
+                savedTheme = localStorage.getItem("theme") || "system";
+            } catch (e) {}
+
+            setTheme(savedTheme);
+        </script>
+    </body>
+</html>
